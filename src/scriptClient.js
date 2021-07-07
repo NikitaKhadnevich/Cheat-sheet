@@ -20,20 +20,20 @@ function createPatchForm() {
 
 //________________________________________//
 
-function createValueAccum(obj, name) {
-    var formData = new FormData(document.forms.person);
+function createValueAccum(obj, name) { // Функция для сбора вэлью всех инпутов
+    var formData = new FormData(document.forms.person); // Создаем форму 
     formData.forEach(function(value, key){
-        obj[key] = value;
+        obj[key] = value; // ТУТ ВАЖНО! мы говорим, что передаем значение равное вэлью формы
     });
 }
 
 async function createNewUser(e, myForm) {
     myForm = {}
     e.preventDefault();
-    createValueAccum(myForm);
-    client.reviews.postReview(client.baseUrl, myForm)
-    await client.reviews.getReview(client.baseUrl)
-    renderUser()
+    createValueAccum(myForm); // А тут по сути мы записываем это значение в нашу форму
+    await client.reviews.postReview(client.baseUrl, myForm) // Тут отдаем на пост серваку
+    await client.reviews.getReview(client.baseUrl) // Тут получаем уже с сервака дату
+    renderUser() // Перерисовываем компонент
 }
 send.addEventListener('click', createNewUser);
 
@@ -58,7 +58,7 @@ function  renderPatch(e, taraget) {
     let divFormStyle = mainContainer.style
     divFormStyle.opacity = '1'   
     divFormStyle.position = 'absolute'
-    divFormStyle.left = '30%'
+    divFormStyle.left = '25%'
     divFormStyle.top = createCoord(e)
     divFormStyle.zIndex = '2'
     divFormStyle.opacity = '1'
@@ -68,13 +68,13 @@ function  renderPatch(e, taraget) {
         e.preventDefault();
         let myDataSet = e.target.dataset.numb
         if(e.target.id === 'saveChanges') {
-            correctForm = {}
-            createValueAccums(correctForm);
-            checkForm(correctForm)
+            correctForm = {} // Тут по аналогии с добавленим - создаем пустой объект 
+            createValueAccums(correctForm); // Забираем с формы
+            checkForm(correctForm) // Проверяем на пустые строки и их не перезаписываем
             await client.reviews.patchReview(client.baseUrl, correctForm, myDataSet)
             await client.reviews.getReview(client.baseUrl);
-            renderUser()
-            skipWrapper()
+            skipWrapper() // Закрываем форму
+            renderUser() //Рендерим проект 
             mainContainer.innerHTML = ''
         }
         if (e.target.id === 'skipChanges') {
