@@ -29,3 +29,8 @@ __Этот проект представляет собой небольшое S
 # Результаты
 Результатом разработки данного проекта стало небольшое и простое приложение-шпаргалка, которое использует API на базе axios для создания запросов,
 интерфейс для отправки, редактирования, удаления и тд., а также интерфейс для вывода и демонстрации текущих заданий.
+
+# Стек
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
