@@ -1,116 +1,179 @@
 html {
-   font-family: 'Lora', sans-serif;
-   width: 100%;
+  font-family: "Lora", sans-serif;
+  width: 100%;
 }
 
 body {
-   width: 95%;
-   background-color: rgba(0, 0, 0, 0.8);
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.wrapper, body{
-   margin: 0 auto;
+.wrapper,
+body {
+  margin: 0 auto;
 }
 
 .addPerson {
-   margin: 0 auto;
-   margin-top: 30px;
-   width: 100%;
-   display: flex;
-   justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #person {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-   justify-content: space-between;
-   margin: 0 auto;
-   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
 }
 
-#person > input{
-   margin: 5px;
+#person > input {
+  margin: 5px;
 }
 
 .MainContainer {
-   position: absolute;
+  position: absolute;
+}
+
+#formContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  position: fixed;
+  top: 20%;
+  left: calc(50% - 200px);
+}
+
+#persons > input {
+  width: 100%;
+  border-radius: 5px !important;
+  box-sizing: border-box;
 }
 
 .container {
-   background-color: whitesmoke;
-   padding: 10px;
-   margin-top: 10px;
-   border-radius: 15px;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
 }
 
 .container > div {
-   background-color:rgb(205, 233, 255);
-   padding: 10px;
-   margin: 15px;
-   border-radius: 15px;
+  background-color: rgb(205, 233, 255);
+  padding: 10px;
+  margin: 15px;
+  border-radius: 15px;
 }
 
 .container > div:hover {
-   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   transition: .3s;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: 0.3s;
 }
 
-#putBut, #delBut {
-   padding: 5px;
-   border-radius: 10px;
-   transform: 0.5;
+#putBut,
+#delBut {
+  padding: 5px;
+  border-radius: 10px;
+  transform: 0.5;
 }
 
-#skipChanges , #saveChanges {
-   transition: .5s;
+#skipChanges,
+#saveChanges {
+  transition: 0.5s;
 }
 
-#putBut:hover, #delBut:hover , #skipChanges:hover, #saveChanges:hover{
-   font-size: .9em;
-   transition: .3s;
-   background-color: rgba(0, 0, 0, 0.8);
-   color:rgb(205, 233, 255);
-   transform: 0.5;
+#putBut:hover,
+#delBut:hover,
+#skipChanges:hover {
+  font-size: 0.9em;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(205, 233, 255);
+  transform: 0.5;
 }
 
-#delBut:hover , #skipChanges:hover{
-   color:rgb(255, 171, 161);
+#delBut:hover,
+#skipChanges:hover {
+  color: rgb(255, 171, 161);
 }
 
-#person > input,textarea {
-   background-color: whitesmoke;
-   padding: 10px;
-   box-shadow:0 5px 15px 4px rgba(0,0,0,0.06);
-   border-radius: 11px;
-   border:0;
-   border-bottom:1px solid #eee;
-   max-width: 100%;
+#person > input,
+textarea {
+  background-color: whitesmoke;
+  padding: 10px;
+  box-shadow: 0 5px 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 11px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  max-width: 100%;
 }
 
-#person > input, textarea {
-   font-family:inherit;
-   font-size: inherit;
+#person > input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 #person > textarea {
-   resize: vertical;
-   border-radius:15px;
-   border:0;
-   box-shadow:4px 4px 10px rgba(0,0,0,0.06);
-   height:100%;
+  resize: vertical;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+  height: 100%;
 }
 
-#persons > input{
-   margin: 5px;
+#persons > input {
+  margin: 5px;
 }
 
-#persons > input,textarea {
-   background-color: whitesmoke;
-   padding: 10px;
-   box-shadow:0 5px 15px 4px rgba(0,0,0,0.06);
-   border-radius: 11px;
-   border:0;
-   border-bottom:1px solid #eee;
-   min-width: 50%;
-   max-width: 100%;
+#persons > input,
+textarea {
+  background-color: whitesmoke;
+  padding: 10px;
+  box-shadow: 0 5px 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 11px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+#saveChanges {
+  transition: 0.3s;
+  color: whitesmoke !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  outline: none;
+  border: none !important;
+  width: 220px !important;
+  min-width: 220px !important;
+  margin-left: 50px !important;
+}
+
+#skipChanges {
+  transition: 0.3s;
+  color: whitesmoke;
+  background: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: 0px solid rgba(255, 120, 120, 0.5);
+  border-radius: 10px;
+  position: absolute;
+  margin: 5px !important;
+  right: 50px !important;
+  height: 35px !important;
+  width: 35px !important;
+}
+
+#skipChanges:hover {
+  transition: 0.3s;
+  color: red;
+  background: rgba(255, 120, 120, 0.5);
+  outline: none;
+  border: 2px solid rgba(255, 120, 120, 0.5);
+  border-radius: 40px;
+}
+
+#saveChanges:hover {
+  transition: 0.3s;
+  background-color: #cde9ff87 !important;
+  transition: 0.3s;
 }
