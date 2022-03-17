@@ -1,0 +1,53 @@
+@media screen and (max-width: 768px) {
+  #formContainer {
+    max-width: 350px;
+    margin: 0 auto;
+    position: fixed;
+    top: 20%;
+    left: calc(50% - 175px);
+  }
+
+  #saveChanges {
+    width: 160px !important;
+    min-width: 160px !important;
+    margin-left: 30px !important;
+  }
+
+  #skipChanges {
+    position: absolute;
+    margin: 5px !important;
+    right: 35px !important;
+    height: 35px !important;
+    width: 35px !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  .container > div {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  #formContainer {
+    max-width: 250px;
+    top: 20%;
+    left: calc(50% - 125px);
+  }
+
+  #saveChanges {
+    width: 160px !important;
+    min-width: 160px !important;
+    margin-left: 0px !important;
+  }
+
+  #skipChanges {
+    margin: 5px !important;
+    right: -5px !important;
+  }
+}

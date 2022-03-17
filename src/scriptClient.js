@@ -1,5 +1,3 @@
-// import Client from './indexClient'
-
 const client = new Client();
 console.log(client);
 
@@ -32,8 +30,12 @@ async function createNewUser(e, myForm) {
   myForm = {};
   e.preventDefault();
   createValueAccum(myForm); // А тут по сути мы записываем это значение в нашу форму
-  await client.reviews.postReview(client.baseUrl, myForm); // Тут отдаем на пост серваку
-  await client.reviews.getReview(client.baseUrl); // Тут получаем уже с сервака дату
+  const isEmpty = Object.values(myForm);
+  isEmpty.includes("")
+    ? alert("Заполните поля новой заметки") &&
+      (await client.reviews.getReview(client.baseUrl))
+    : (await client.reviews.postReview(client.baseUrl, myForm)) &&
+      (await client.reviews.getReview(client.baseUrl)); // Тут получаем уже с сервака дату// Тут отдаем на пост серваку // Тут получаем уже с сервака дату)
   renderUser(); // Перерисовываем компонент
 }
 send.addEventListener("click", createNewUser);
@@ -153,16 +155,16 @@ container.addEventListener("click", deleteUser);
 async function renderUser() {
   var myUsers = await client.reviews.getReview(client.baseUrl);
   console.log(myUsers);
-  const html = myUsers.reduce((accum, item, index) => {
+  const html = myUsers.reduce((accum, item) => {
     return (
       accum +
       `<div class="user${item.id}" id="user${item.id}" data-numb="${item.id}">
-                <h2>Название: ${item.name}</h4>
-                <h4>Краткое содержание: ${item.age}</h4>
-                <h4>Сложность:  ${item.status}</h4>
-                <button id="delBut" data-numb="${item.id}">Удалить</button>
-                <button id="putBut" data-numb="${item.id}">Исправить</button>        
-            </div>`
+          <h2>Название: ${item.name}</h4>
+          <h4>Краткое содержание: ${item.age}</h4>
+          <h4>Сложность:  ${item.status}</h4>
+          <button id="delBut" data-numb="${item.id}">Удалить</button>
+          <button id="putBut" data-numb="${item.id}">Исправить</button>        
+      </div>`
     );
   }, "");
   container.innerHTML = html;

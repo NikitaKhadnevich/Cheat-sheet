@@ -1,6 +1,12 @@
 html {
-  font-family: "Lora", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   width: 100%;
+}
+
+h2,
+h4 {
+  font-weight: 400;
+  text-align: left;
 }
 
 body {
@@ -22,9 +28,9 @@ body {
 }
 
 #person {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
 }
@@ -38,11 +44,11 @@ body {
 }
 
 #formContainer {
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   position: fixed;
   top: 20%;
-  left: calc(50% - 200px);
+  left: calc(50% - 300px);
 }
 
 #persons > input {
@@ -60,7 +66,7 @@ body {
 
 .container > div {
   background-color: rgb(205, 233, 255);
-  padding: 10px;
+  padding: 5px 15px 15px 15px;
   margin: 15px;
   border-radius: 15px;
 }
@@ -73,8 +79,14 @@ body {
 #putBut,
 #delBut {
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid rgba(128, 128, 128, 0.356);
   transform: 0.5;
+}
+
+#putBut {
+  margin-left: 5px;
 }
 
 #skipChanges,
@@ -99,19 +111,20 @@ body {
 
 #person > input,
 textarea {
+  font-family: "Ubuntu", sans-serif;
+  font-size: inherit;
   background-color: whitesmoke;
   padding: 10px;
   box-shadow: 0 5px 15px 4px rgba(0, 0, 0, 0.06);
-  border-radius: 11px;
+  border-radius: 5px;
   border: 0;
   border-bottom: 1px solid #eee;
   max-width: 100%;
+  min-width: 25%;
 }
 
-#person > input,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
+#person > input::placeholder {
+  color: rgba(128, 128, 128, 0.5);
 }
 
 #person > textarea {
@@ -131,7 +144,7 @@ textarea {
   background-color: whitesmoke;
   padding: 10px;
   box-shadow: 0 5px 15px 4px rgba(0, 0, 0, 0.06);
-  border-radius: 11px;
+  border-radius: 5px;
   border: 0;
   border-bottom: 1px solid #eee;
   min-width: 50%;
@@ -146,7 +159,7 @@ textarea {
   border: none !important;
   width: 220px !important;
   min-width: 220px !important;
-  margin-left: 50px !important;
+  margin-left: 150px !important;
 }
 
 #skipChanges {
@@ -155,10 +168,10 @@ textarea {
   background: rgba(0, 0, 0, 0.5);
   outline: none;
   border: 0px solid rgba(255, 120, 120, 0.5);
-  border-radius: 10px;
+  border-radius: 7px;
   position: absolute;
   margin: 5px !important;
-  right: 50px !important;
+  right: 155px !important;
   height: 35px !important;
   width: 35px !important;
 }
@@ -175,5 +188,15 @@ textarea {
 #saveChanges:hover {
   transition: 0.3s;
   background-color: #cde9ff87 !important;
+}
+
+#send {
+  cursor: pointer;
   transition: 0.3s;
+  max-width: 100px !important;
+  min-width: 60px !important;
+}
+#send:hover {
+  background: rgb(205, 233, 255);
+  transition: 0.3s !important;
 }
